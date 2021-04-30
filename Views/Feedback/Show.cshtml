@@ -1,0 +1,65 @@
+﻿@model Red_Lake_Hospital_Redesign_Team6.Models.ViewModels.ShowFeedbackViewModel
+
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>@Model.Feedback.title</h2>
+<div class="navbar">
+    <a class="navlink" href="/Feedback/List">Back</a><br>
+    <a class="navlink" href="/Feedback/DeleteConfirm/@Model.Feedback.feedback_id">Delete</a>
+</div>
+
+<div style="overflow:hidden;">
+    <table>
+        <tr>
+            <td>
+                First Name : 
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Feedback.fname)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Last Name : 
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Feedback.lname)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Email :
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Feedback.email)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Title : 
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Feedback.title)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Text :
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Feedback.text)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Department : 
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Feedback.DepartmentName)
+            </td>
+        </tr>
+    </table>
+</div>
+

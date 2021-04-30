@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Red_Lake_Hospital_Redesign_Team6.Models.BlogDto>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<link href="~/Content/blog.css" rel="stylesheet" type="text/css">
+
+<h2>Blog List</h2>
+
+<div class="navbar">
+    <a class="navlink" href="/Blog/Create">New Blog Entry</a>
+</div>
+
+<table class="table" id="list">
+    <tr>
+        <th>
+            Blog Id
+        </th>
+        <th>
+            Author Id
+        </th>
+        <th>
+            Title
+        </th>
+        <th>
+            Text
+        </th>
+        <th>
+            Email
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.blog_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicationUserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.text)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                <a href="/Blog/AdminShow/@item.blog_id">Read More</a>
+            </td>
+        </tr>
+    }
+
+</table>
